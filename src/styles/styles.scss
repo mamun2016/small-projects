@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+body {
+  font-size: 16px;
+  background: #f7f7f2;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+
+  &-fluid {
+    padding: 0 10px;
+  }
+}
+
+header {
+  padding: 15px 10px;
+  text-align: center;
+  margin: 0 0 40px;
+  background: #fff;
+}
+
+.title-main {
+  font-size: 50px;
+  font-weight: 300;
+  padding: 0 0 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 120px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a345e;
+  }
+
+  a {
+    color: #1a345e;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten(#1a345e, 20);
+    }
+  }
+}
+
+.project {
+  width: calc(33.33333% - 14px);
+  margin: 0 21px 21px 0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: #fff;
+  color: #1a345e;
+  text-decoration: none;
+  transition: 0.15s;
+
+  &:nth-of-type(3n) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+  }
+
+  &-list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &-header {
+    background: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &-details {
+    padding: 25px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 260px;
+    }
+  }
+}
+
+.under-construction {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 5px dotted rgba(0, 0, 0, 0.05);
+  margin: auto;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 30px;
+
+  span {
+    display: inline-block;
+    position: relative;
+    padding: 0 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      bottom: 6px;
+      width: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.button {
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &-text {
+    padding: 0 10px;
+    background: none;
+    color: lighten(#1a345e, 20);
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+      background: initial;
+      color: #1a345e;
+    }
+  }
+
+  &-medium {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+.loader {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #000;
+  // box-shadow: 0 0 5px rgba(255, 255, 255, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.4);
+  border-top: 10px solid #fff;
+  animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.input-field {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 0;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  li {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: none;
+    background: #fff;
+
+    &:last-of-type {
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+      background: #666;
+      color: #fff;
+    }
+
+    &.disabled {
+      color: #999;
+      background: #efefef;
+      text-shadow: 1px 1px 0 #fff;
+      cursor: default;
+    }
+
+    a {
+      display: block;
+      padding: 5px 10px;
+    }
+  }
+}
+

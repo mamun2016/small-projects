@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.accordion {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 15px;
+  margin: 0 0 30px;
+  position: relative;
+
+  &:last-of-type {
+    margin: 0;
+  }
+
+  &::before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    font-size: 11px;
+    padding: 2px 5px;
+    position: absolute;
+    bottom: 100%;
+    background: gray;
+    // border: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 0;
+    color: #fff;
+  }
+
+  &-title {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .button {
+      font-size: 18px;
+      display: flex;
+      margin: 0 0 0 auto;
+      padding: 5px;
+    }
+  }
+
+  &-text {
+    line-height: 1.4em;
+    margin: 10px 0 0;
+  }
+
+  &-list {
+    counter-reset: myCounter;
+    max-width: 700px;
+    margin: auto auto 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 30px;
+  }
+}

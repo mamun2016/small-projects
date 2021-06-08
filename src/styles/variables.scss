@@ -1,0 +1,16 @@
+$large-desktop: 1200px;       // large desktops
+$desktop-tab: 991px;          // desktops and landscape tabs
+$tab-mobile: 767px;           // portrait tabs and landscape mobiles
+$mobile: 480px;               // portrait and landscape mobiles
+
+@mixin viewport-is($media) {
+  @if $media == large-desktop {
+    @media only screen and (max-width: $large-desktop) { @content; }
+  } @else if $media == desktop-tab {
+    @media only screen and (max-width: $desktop-tab) { @content; }
+  } @else if $media == tab-mobile {
+    @media only screen and (max-width: $tab-mobile) { @content; }
+  } @else if $media == mobile {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+}

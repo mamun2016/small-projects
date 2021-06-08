@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+.tour {
+  margin: 0 0 25px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  &-image {
+    text-align: center;
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+      max-height: 350px;
+      object-fit: cover;
+    }
+  }
+
+  &-price,
+  &-close {
+    position: absolute;
+  }
+
+  &-price {
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    padding: 10px 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px 0 0;
+  }
+
+  &-close {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgba(#fff, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    right: -15px;
+    top: -15px;
+    padding: 7px;
+    cursor: pointer;
+
+    &:hover {
+      background: #fff;
+    }
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  &-list {
+    max-width: 700px;
+    margin: auto auto 20px;
+  }
+
+  &-details {
+    padding: 20px;
+  }
+
+  &-title {
+    font-size: 22px;
+    font-weight: normal;
+    margin: 0 0 15px;
+
+    @include viewport-is(tab-mobile) {
+      font-size: 18px;
+    }
+  }
+
+  &-text {
+    line-height: 1.5em;
+  }
+
+  &-nil {
+    text-align: center;
+  }
+}

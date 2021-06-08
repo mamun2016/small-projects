@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+.birthday {
+  &-reminder {
+
+  }
+
+  &-box {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: auto auto 20px;
+    max-width: 500px;
+    background: #fff;
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    font-size: 20px;
+    margin: 0 0 30px;
+    padding: 0 0 10px;
+    font-weight: 300;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 1px;
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      bottom: 0;
+      width: 60px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &-avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-details {
+    flex: 1;
+    margin: 0 0 0 15px;
+
+    h4 {
+      margin: 0 0 6px;
+    }
+  }
+}
